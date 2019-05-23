@@ -3,7 +3,7 @@
 
 Summary:	Vulkan API headers and registry
 Summary(pl.UTF-8):	Pliki nagłówkowe i rejestr API Vulkan
-Name:		vulkan-headers
+Name:		Vulkan-Headers
 Version:	%{api_version}
 Release:	1
 License:	Apache v2.0, parts MIT-like
