@@ -5,13 +5,14 @@ Summary:	Vulkan API headers and registry
 Summary(pl.UTF-8):	Pliki nagłówkowe i rejestr API Vulkan
 Name:		Vulkan-Headers
 Version:	%{api_version}
-Release:	1
+Release:	2
 License:	Apache v2.0, parts MIT-like
 Group:		Development
 Source0:	https://github.com/KhronosGroup/Vulkan-Headers/archive/v%{version}/Vulkan-Headers-%{version}.tar.gz
 # Source0-md5:	98dd2be8b74dff529085f078863ef407
 URL:		https://github.com/KhronosGroup/Vulkan-Headers/
 BuildRequires:	cmake >= 2.8.11
+Conflicts:	vulkan-devel < 1.1.107
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
