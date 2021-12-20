@@ -3,7 +3,7 @@ Summary(pl.UTF-8):	Pliki nagłówkowe i rejestr API Vulkan
 Name:		Vulkan-Headers
 # note: prefer "sdk-" tags for better quality level
 Version:	1.2.198.0
-Release:	1
+Release:	2
 License:	Apache v2.0, parts MIT-like
 Group:		Development
 #Source0Download: https://github.com/KhronosGroup/Vulkan-Headers/tags
@@ -12,6 +12,7 @@ Source0:	https://github.com/KhronosGroup/Vulkan-Headers/archive/sdk-%{version}/V
 URL:		https://github.com/KhronosGroup/Vulkan-Headers/
 BuildRequires:	cmake >= 3.10.2
 Conflicts:	vulkan-devel < 1.1.107
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
