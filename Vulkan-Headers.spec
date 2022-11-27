@@ -11,6 +11,7 @@ Source0:	https://github.com/KhronosGroup/Vulkan-Headers/archive/sdk-%{version}/V
 # Source0-md5:	8c5bce593727609fdbf574b98ed7f38e
 URL:		https://github.com/KhronosGroup/Vulkan-Headers/
 BuildRequires:	cmake >= 3.10.2
+BuildRequires:	rpmbuild(macros) >= 1.605
 Conflicts:	vulkan-devel < 1.1.107
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
