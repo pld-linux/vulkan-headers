@@ -12,6 +12,10 @@ Source0:	https://github.com/KhronosGroup/Vulkan-Headers/archive/sdk-%{version}/V
 URL:		https://github.com/KhronosGroup/Vulkan-Headers/
 BuildRequires:	cmake >= 3.10.2
 BuildRequires:	rpmbuild(macros) >= 1.605
+Requires:	libxcb-devel
+Requires:	wayland-devel
+Requires:	xorg-lib-libX11-devel
+Requires:	xorg-lib-libXrandr-devel
 Conflicts:	vulkan-devel < 1.1.107
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
