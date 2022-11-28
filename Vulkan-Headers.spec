@@ -3,7 +3,7 @@ Summary(pl.UTF-8):	Pliki nagłówkowe i rejestr API Vulkan
 Name:		Vulkan-Headers
 # note: prefer "sdk-" tags for better quality level
 Version:	1.3.224.1
-Release:	1
+Release:	2
 License:	Apache v2.0, parts MIT-like
 Group:		Development
 #Source0Download: https://github.com/KhronosGroup/Vulkan-Headers/tags
