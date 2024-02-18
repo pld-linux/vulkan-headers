@@ -1,14 +1,15 @@
 Summary:	Vulkan API headers and registry
 Summary(pl.UTF-8):	Pliki nagłówkowe i rejestr API Vulkan
 Name:		Vulkan-Headers
-# note: prefer "sdk-" tags for better quality level
-Version:	1.3.243.0
+# note: prefer "vulkan-sdk-" tags for better quality level
+Version:	1.3.275.0
+%define	gitref	vulkan-sdk-%{version}
 Release:	1
 License:	Apache v2.0, parts MIT-like
 Group:		Development
 #Source0Download: https://github.com/KhronosGroup/Vulkan-Headers/tags
-Source0:	https://github.com/KhronosGroup/Vulkan-Headers/archive/sdk-%{version}/Vulkan-Headers-sdk-%{version}.tar.gz
-# Source0-md5:	848df8eb68f8f79a2b5b39aecc0595c4
+Source0:	https://github.com/KhronosGroup/Vulkan-Headers/archive/%{gitref}/Vulkan-Headers-%{gitref}.tar.gz
+# Source0-md5:	f66b2d4d9f709d991f623ce1ea76b21d
 URL:		https://github.com/KhronosGroup/Vulkan-Headers/
 BuildRequires:	cmake >= 3.15
 BuildRequires:	rpmbuild(macros) >= 1.605
@@ -27,7 +28,7 @@ Header files and registry for Vulkan API.
 Pliki nagłówkowe i rejestr API Vulkan.
 
 %prep
-%setup -qn Vulkan-Headers-sdk-%{version}
+%setup -q -n Vulkan-Headers-%{gitref}
 
 %build
 %cmake -B build
