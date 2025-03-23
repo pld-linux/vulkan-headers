@@ -2,17 +2,18 @@ Summary:	Vulkan API headers and registry
 Summary(pl.UTF-8):	Pliki nagłówkowe i rejestr API Vulkan
 Name:		Vulkan-Headers
 # note: prefer "vulkan-sdk-" tags for better quality level
-Version:	1.3.280.0
+Version:	1.4.309.0
 %define	gitref	vulkan-sdk-%{version}
 Release:	1
 License:	Apache v2.0, parts MIT-like
 Group:		Development
 #Source0Download: https://github.com/KhronosGroup/Vulkan-Headers/tags
 Source0:	https://github.com/KhronosGroup/Vulkan-Headers/archive/%{gitref}/Vulkan-Headers-%{gitref}.tar.gz
-# Source0-md5:	6a5ff0b86c072300fac88cfdd3996c75
+# Source0-md5:	719728c464acc5c10e86f17fd57f7598
 URL:		https://github.com/KhronosGroup/Vulkan-Headers/
-BuildRequires:	cmake >= 3.15
+BuildRequires:	cmake >= 3.22.1
 BuildRequires:	rpmbuild(macros) >= 1.605
+BuildRequires:	sed >= 4.0
 Requires:	libxcb-devel
 Requires:	wayland-devel
 Requires:	xorg-lib-libX11-devel
@@ -30,6 +31,8 @@ Pliki nagłówkowe i rejestr API Vulkan.
 %prep
 %setup -q -n Vulkan-Headers-%{gitref}
 
+%{__sed} -i -e '1s,/usr/bin/env python3,%{__python3},' registry/*.py registry/spec_tools/conventions.py
+
 %build
 %cmake -B build
 
@@ -46,7 +49,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README.md
+%doc LICENSE.md README.md SECURITY.md
 %{_includedir}/vk_video
 %{_includedir}/vulkan
 %{_datadir}/vulkan/registry
